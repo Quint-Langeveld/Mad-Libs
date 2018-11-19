@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">QuintLangeveld-pset4</string>
+    <string name="fill_in_your_words">Type in your words, 10 to go..</string>
+    <string name="ok">OK</string>
 </resources>

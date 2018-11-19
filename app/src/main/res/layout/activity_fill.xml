@@ -15,7 +15,7 @@
         android:layout_marginBottom="332dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Type in your words, 10 to go.."
+        android:text="@string/fill_in_your_words"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button2"
@@ -27,19 +27,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:text="Ok"
+        android:text="@string/ok"
         android:textAllCaps="true"
+        android:onClick="chooseWord"
         app:layout_constraintBaseline_toBaselineOf="@+id/editText"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        tools:layout_editor_absoluteX="63dp"
-        tools:layout_editor_absoluteY="223dp" />
+    <TextView
+        android:id="@+id/showWords"
+        android:layout_width="205dp"
+        android:layout_height="206dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="233dp" />
 
 </android.support.constraint.ConstraintLayout>

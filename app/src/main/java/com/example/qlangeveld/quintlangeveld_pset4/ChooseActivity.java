@@ -22,7 +22,7 @@ public class ChooseActivity extends AppCompatActivity {
         Story Simple = new Story(simple);
 
         Intent simpleIntent = new Intent(this, FillActivity.class);
-        simpleIntent.putExtra("simpleStory", Simple);
+        simpleIntent.putExtra("clickedStory", Simple);
         startActivity(simpleIntent);
     }
 
@@ -31,7 +31,7 @@ public class ChooseActivity extends AppCompatActivity {
         Story Tarzan = new Story(tarzan);
 
         Intent tarzanIntent = new Intent(this, FillActivity.class);
-        tarzanIntent.putExtra("tarzanStory", Tarzan);
+        tarzanIntent.putExtra("clickedStory", Tarzan);
         startActivity(tarzanIntent);
     }
 
@@ -40,7 +40,7 @@ public class ChooseActivity extends AppCompatActivity {
         Story University = new Story(university);
 
         Intent universityIntent = new Intent(this, FillActivity.class);
-        universityIntent.putExtra("universityStory", University);
+        universityIntent.putExtra("clickedStory", University);
         startActivity(universityIntent);
     }
 
@@ -49,7 +49,7 @@ public class ChooseActivity extends AppCompatActivity {
         Story Clothes = new Story(clothes);
 
         Intent clothesIntent = new Intent(this, FillActivity.class);
-        clothesIntent.putExtra("clothesStory", Clothes);
+        clothesIntent.putExtra("clickedStory", Clothes);
         startActivity(clothesIntent);
     }
 
@@ -58,7 +58,7 @@ public class ChooseActivity extends AppCompatActivity {
         Story Dance = new Story(dance);
 
         Intent danceIntent = new Intent(this, FillActivity.class);
-        danceIntent.putExtra("danceStory", Dance);
+        danceIntent.putExtra("clickedStory", Dance);
         startActivity(danceIntent);
     }
 }
