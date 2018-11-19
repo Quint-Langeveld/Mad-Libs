@@ -15,26 +15,50 @@ public class ChooseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_choose);
     }
 
+
+    // First the easy way of thoosing a stroy. Afterwards this can always be changed to a more  code
     public void onSimpleStoryClicked(View view) {
         InputStream simple = getResources().openRawResource(R.raw.madlib0_simple);
         Story Simple = new Story(simple);
 
-        // Next Intent...
+        Intent simpleIntent = new Intent(this, FillActivity.class);
+        simpleIntent.putExtra("simpleStory", Simple);
+        startActivity(simpleIntent);
     }
 
     public void onTarzanStoryClicked(View view) {
+        InputStream tarzan = getResources().openRawResource(R.raw.madlib1_tarzan);
+        Story Tarzan = new Story(tarzan);
 
+        Intent tarzanIntent = new Intent(this, FillActivity.class);
+        tarzanIntent.putExtra("tarzanStory", Tarzan);
+        startActivity(tarzanIntent);
     }
 
     public void onUniversityStoryClicked(View view) {
+        InputStream university = getResources().openRawResource(R.raw.madlib2_university);
+        Story University = new Story(university);
 
+        Intent universityIntent = new Intent(this, FillActivity.class);
+        universityIntent.putExtra("universityStory", University);
+        startActivity(universityIntent);
     }
 
     public void onClothesStoryClicked(View view) {
+        InputStream clothes = getResources().openRawResource(R.raw.madlib3_clothes);
+        Story Clothes = new Story(clothes);
 
+        Intent clothesIntent = new Intent(this, FillActivity.class);
+        clothesIntent.putExtra("clothesStory", Clothes);
+        startActivity(clothesIntent);
     }
 
     public void onDanceStoryClicked(View view) {
+        InputStream dance = getResources().openRawResource(R.raw.madlib4_dance);
+        Story Dance = new Story(dance);
 
+        Intent danceIntent = new Intent(this, FillActivity.class);
+        danceIntent.putExtra("danceStory", Dance);
+        startActivity(danceIntent);
     }
 }
