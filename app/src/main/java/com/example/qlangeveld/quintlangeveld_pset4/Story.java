@@ -72,6 +72,7 @@ public class Story implements Serializable {
         return placeholders.size();
     }
 
+
     /** returns how many placeholders still need to be filled in */
     public int getPlaceholderRemainingCount() {
         return placeholders.size() - filledIn;

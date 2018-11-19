@@ -6,7 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 public class FillActivity extends AppCompatActivity {
 
@@ -18,19 +22,35 @@ public class FillActivity extends AppCompatActivity {
         setContentView(R.layout.activity_fill);
         Intent intent = getIntent();
         currentStory = (Story) intent.getSerializableExtra("clickedStory");
+        TextView setWord = findViewById(R.id.editText);
+        setWord.setText(currentStory.getNextPlaceholder());
+
+        String upperText = "Type in your words, "+ currentStory.getPlaceholderRemainingCount() + " to go:";
+        TextView countText = findViewById(R.id.countText);
+        countText.setText(upperText);
     }
 
     public void chooseWord(View view) {
-        TextView getword = findViewById(R.id.editText);
-        String word = getword.getText().toString();
+        // put chosen word in placeholder
+        TextView setWord = findViewById(R.id.editText);
+        String word = setWord.getText().toString();
+//        word.
+        currentStory.fillInPlaceholder(word);
 
-        TextView showWords = findViewById(R.id.showWords);
-        List<String> words = new List<String>();
+        // change count of upper text
+        String upperText = "Type in your words, "+ currentStory.getPlaceholderRemainingCount() + " to go:";
+        TextView countText = findViewById(R.id.countText);
+        countText.setText(upperText);
 
-        words.add(word);
+        // change text in textBar
+        setWord.setText(currentStory.getNextPlaceholder());
 
-
-        showWords.setText(word);
+//      if all placeholders are filled in, go to next interface with the text!
+        if (currentStory.isFilledIn()) {
+            Intent intent = new Intent(this, TextActivity.class);
+            intent.putExtra("filledStory", currentStory);
+            startActivity(intent);
+        }
     }
 
 }
