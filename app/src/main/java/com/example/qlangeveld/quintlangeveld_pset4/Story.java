@@ -96,7 +96,7 @@ public class Story implements Serializable {
                 // a placeholder; replace with e.g. "<0>" so I can find/replace it easily later
                 // (make them bold so that they stand out!)
                 if (htmlMode) {
-                    text += " <b><" + placeholders.size() + "></b>";
+                    text += "<b><" + placeholders.size() + "></b>";
                 } else {
                     text += " <" + placeholders.size() + ">";
                 }
