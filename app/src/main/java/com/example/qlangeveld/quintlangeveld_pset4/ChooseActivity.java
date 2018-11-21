@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import java.io.InputStream;
 
@@ -15,8 +16,7 @@ public class ChooseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_choose);
     }
 
-
-    // First the easy way of thoosing a stroy. Afterwards this can always be changed to a more  code
+    // For every story, there's a different button, that saves the right story in an intent.
     public void onSimpleStoryClicked(View view) {
         InputStream simple = getResources().openRawResource(R.raw.madlib0_simple);
         Story Simple = new Story(simple);

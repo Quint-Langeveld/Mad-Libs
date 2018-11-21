@@ -1,6 +1,7 @@
 package com.example.qlangeveld.quintlangeveld_pset4;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -22,8 +23,9 @@ public class FillActivity extends AppCompatActivity {
         setContentView(R.layout.activity_fill);
         Intent intent = getIntent();
         currentStory = (Story) intent.getSerializableExtra("clickedStory");
-        TextView setWord = findViewById(R.id.editText);
-        setWord.setText(currentStory.getNextPlaceholder());
+        TextView sortText = findViewById(R.id.sortWord);
+        String inFrontOfTextBar = (currentStory.getNextPlaceholder() + ":");
+        sortText.setText(inFrontOfTextBar);
 
         String upperText = "Type in your words, "+ currentStory.getPlaceholderRemainingCount() + " to go:";
         TextView countText = findViewById(R.id.countText);
@@ -34,7 +36,6 @@ public class FillActivity extends AppCompatActivity {
         // put chosen word in placeholder
         TextView setWord = findViewById(R.id.editText);
         String word = setWord.getText().toString();
-//        word.
         currentStory.fillInPlaceholder(word);
 
         // change count of upper text
@@ -42,14 +43,21 @@ public class FillActivity extends AppCompatActivity {
         TextView countText = findViewById(R.id.countText);
         countText.setText(upperText);
 
-        // change text in textBar
-        setWord.setText(currentStory.getNextPlaceholder());
+        // change text in front of textBar and clear out textBar
+        TextView sortText = findViewById(R.id.sortWord);
+        String inFrontOfTextBar = (currentStory.getNextPlaceholder() + ":");
+        sortText.setText(inFrontOfTextBar);
 
-//      if all placeholders are filled in, go to next interface with the text!
+
+        String inTextBar = "";
+        setWord.setText(inTextBar);
+
+        // if all placeholders are filled in, go to next interface with the text!
         if (currentStory.isFilledIn()) {
             Intent intent = new Intent(this, TextActivity.class);
             intent.putExtra("filledStory", currentStory);
             startActivity(intent);
+            finish();
         }
     }
 

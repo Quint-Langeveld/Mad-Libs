@@ -13,6 +13,7 @@ public class StartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_start);
     }
 
+    // go to the choose menu
     public void onStartClick(View view) {
         Intent intent = new Intent(StartActivity.this, ChooseActivity.class);
         startActivity(intent);
