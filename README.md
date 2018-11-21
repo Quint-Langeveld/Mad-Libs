@@ -6,4 +6,4 @@ Een spelletje waar je je eigen woorden in een verhaaltje plakt zonder de zinnen 
 
 ![alt text](https://github.com/Quint-Langeveld/Mad-Libs/blob/master/doc/Screenshot_20181121-122530.png)
 
-![alt text]()
+![alt text](https://github.com/Quint-Langeveld/Mad-Libs/blob/master/doc/Screenshot_20181121-122550.png)
